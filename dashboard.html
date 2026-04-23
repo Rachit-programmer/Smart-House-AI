@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Smart House Command Center</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+<!-- MENU -->
+
+<div class="menu">
+
+<button onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+</div>
+
+
+
+<h1>
+AI Smart House Command Center
+</h1>
+
+
+
+<!-- ALERT TICKER -->
+
+<div class="alertBar">
+
+<span id="alertTicker">
+
+🚨 System Ready — Monitoring Rooms...
+
+</span>
+
+</div>
+
+
+
+<!-- HEALTH SCORE -->
+
+<div class="healthScoreBox">
+
+<h2>House Health Score</h2>
+
+<div id="healthScore">
+80
+</div>
+
+<p id="healthStatus">
+SAFE
+</p>
+
+</div>
+
+
+
+<!-- ROOM GRID -->
+
+<div class="roomGrid">
+
+<div class="roomCard" id="livingCard">
+
+<h2>Living Room</h2>
+
+<p id="livingTemp">Temp: --</p>
+<p id="livingRisk">Risk: --</p>
+<p id="livingEff">Efficiency: --</p>
+
+<button onclick="openRoom('living')">
+Analyze
+</button>
+
+</div>
+
+
+
+<div class="roomCard" id="kitchenCard">
+
+<h2>Kitchen</h2>
+
+<p id="kitchenTemp">Temp: --</p>
+<p id="kitchenRisk">Risk: --</p>
+<p id="kitchenEff">Efficiency: --</p>
+
+<button onclick="openRoom('kitchen')">
+Analyze
+</button>
+
+</div>
+
+
+
+<div class="roomCard" id="bedroomCard">
+
+<h2>Bedroom</h2>
+
+<p id="bedroomTemp">Temp: --</p>
+<p id="bedroomRisk">Risk: --</p>
+<p id="bedroomEff">Efficiency: --</p>
+
+<button onclick="openRoom('bedroom')">
+Analyze
+</button>
+
+</div>
+
+
+
+<div class="roomCard" id="bathroomCard">
+
+<h2>Bathroom</h2>
+
+<p id="bathroomTemp">Temp: --</p>
+<p id="bathroomRisk">Risk: --</p>
+<p id="bathroomEff">Efficiency: --</p>
+
+<button onclick="openRoom('bathroom')">
+Analyze
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- AI PANEL -->
+
+<div class="aiPanel">
+
+<h2>AI Recommendation</h2>
+
+<p id="suggestion">
+
+Waiting for room data...
+
+</p>
+
+</div>
+
+
+
+<!-- ACTIVITY -->
+
+<div class="activityPanel">
+
+<h2>System Activity</h2>
+
+<div id="activityLog"></div>
+
+</div>
+
+
+
+<!-- DATA POPUP -->
+
+<div class="popup" id="dataPopup">
+
+<div class="popupContent">
+
+<h2 id="roomTitle">
+Room Analysis
+</h2>
+
+<label>Temperature:</label>
+<input id="temperature" type="number">
+
+<label>People Count:</label>
+<input id="people" type="number">
+
+<label>Electricity Usage:</label>
+<input id="electricity" type="number">
+
+<button onclick="submitData()">
+Run AI Analysis
+</button>
+
+<button onclick="closeDataPopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ALERT POPUP -->
+
+<div class="popup" id="popupBox">
+
+<div class="popupContent">
+
+<h2 id="popupTitle">
+Alert
+</h2>
+
+<p id="popupMessage"></p>
+
+<button onclick="closePopup()">
+OK
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- CHAT BUTTON -->
+
+<div id="chatButton" onclick="toggleChat()">
+💬
+</div>
+
+
+
+<!-- CHAT WINDOW -->
+
+<div id="chatWindow">
+
+<div id="chatHeader">
+
+AI Assistant 🤖
+
+<button onclick="toggleChat()">
+✖
+</button>
+
+</div>
+
+
+
+<div id="chatMessages">
+
+<p class="botMsg">
+
+Hello! Ask me about temperature, electricity or safety.
+
+</p>
+
+</div>
+
+
+
+<div id="chatInputArea">
+
+<input
+id="chatInput"
+type="text"
+placeholder="Ask AI..."
+onkeydown="handleChatEnter(event)">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
+
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

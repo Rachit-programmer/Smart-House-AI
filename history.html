@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu">
+
+<button onclick="goDashboard()">Dashboard</button>
+<button onclick="goAnalytics()">Analytics</button>
+<button onclick="goHistory()">History</button>
+<button onclick="goAlerts()">Alerts</button>
+<button onclick="goSettings()">Settings</button>
+
+</div>
+
+<h1>Room History</h1>
+
+<div id="historyData"></div>
+
+<script>
+
+let data =
+localStorage.getItem("history");
+
+document
+.getElementById("historyData")
+.innerHTML =
+data || "No history yet.";
+
+</script>
+
+<script src="navigation.js"></script>
+
+</body>
+
+</html>
